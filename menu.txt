@@ -1,73 +1,76 @@
+نوشیدنی ها
+
 قهوه
 
-اسپرسو 	210
-اسپرسو سینگل	160
+اسپرسو 	210 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/sperso.png?raw=true
+اسپرسو سینگل	160 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/sperso.png?raw=true
 آمریکانو	220
-کاپوچینو	290
-لاته بم بن	320
-لاته	300
+کاپوچینو	290 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/capochino.png?raw=true
+لاته بم بن	320 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/bommano.png?raw=true
+لاته	300 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/late.png
 لاته کارامل	320
 موکا	320
 
 قهوه دمی
 
-قهوه ترک	190
-قهوه یونانی	200
+قهوه ترک	190 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/6-qahve%20dami/tork.png?raw=true
+قهوه یونانی	200 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/6-qahve%20dami/yonani.png?raw=true
 
 نوشیدنی گرم
 
-لاته ماچا	340
+لاته ماچا	340 
 لاته اوبه	360
 چای ماسالا	220
 چای کرک	240
 
 چای و دمنوش
 
-چای سیاه	120
+چای سیاه	120 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/8-chai%20va%20damnosh/chai%20siah.png?raw=true
 قوری چای (4 نفره)	410
 چای زعفران	170
 چای کاراملی	150
-چای سبز	150
+چای سبز	150 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/8-chai%20va%20damnosh/chai%20sabz.png?raw=true
 
 قهوه سرد
 
-اورنج اسپرسو	330
+اورنج اسپرسو	330 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/orange%20espreso.png?raw=true
 آیس آمریکانو	220
-آیس لاته	300
-آیس لاته کارامل	320
-آیس موکا	320
-آفوگاتو	290
+آیس لاته	300 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/ice%20latte%20caramel.png?raw=true
+آیس لاته کارامل	320 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/ice%20latte%20caramel.png?raw=true
+آیس موکا	320 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/ice%20moka.png?raw=true
+آیس لاته تیرامیسو	380 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/latte%20tiramisu.PNG?raw=true
+آفوگاتو	290 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/afogato.png?raw=true
 
 نوشیدنی سرد (برپایه شیر)
 
-پیناکولادا	310
-آیس ماچا	340
-آیس اوبه	360
+پیناکولادا	310 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/11-noshidani%20sard%20(shir)/pinacolada.png?raw=true
+آیس ماچا	340 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/11-noshidani%20sard%20(shir)/macha.png?raw=true
+آیس اوبه	360 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/11-noshidani%20sard%20(shir)/obbe.png?raw=true
 آیس ماچا اوبه	380
-آیس اوبه انبه	370
+آیس اوبه انبه	370 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/11-noshidani%20sard%20(shir)/obbe%20anbe.png?raw=true
 
 نوشیدنی سرد(گازدار)
 
-رومنزو	290
-لیموناد	240
+رومنزو	290 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/10-noshidani%20sard%20(qazdar)/romanzo.png?raw=true
+لیموناد	240 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/10-noshidani%20sard%20(qazdar)/limonad.png?raw=true
 موهیتو	250
 
 شیک و اسموتی
 
-کاتانیا	380
-فِرارا	360
-ویچِنزا	370
-لیوِرنو	350
-کالابریا	380
-مِسینا	400
-تارانتو	370
-کاپری	420
-سورنِتو	410
+کاتانیا	380 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/katania.png?raw=true
+فِرارا	360 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/ferara.png?raw=true
+ویچِنزا	370 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/vichenza.png?raw=true
+لیوِرنو	350 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/liverno.png?raw=true
+کالابریا	380 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/kalabria.png?raw=true
+مِسینا	400 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/messina.png?raw=true
+تارانتو	370 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/taranto.png?raw=true
+کاپری	420 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/capri.png?raw=true
+سورنِتو	410 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/sorento.png?raw=true
 
 نوشیدنی کنار غذا
 
-سیراکوز	270
-فورلی	260
+سیراکوز	270 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/13-noshidani%20kenar%20qaza/sirakoz.png?raw=true
+فورلی	260 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/13-noshidani%20kenar%20qaza/forli.png?raw=true
 
 وافل
 
@@ -80,58 +83,59 @@
 
 صبحانه
 
-املت تورین	280
-نیمرو بولونیا	230
-تست کومو	460
-بشقاب انگلیسی	520
-وِرونا	290
+املت تورین	280 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/omlet%20torin.png?raw=true
+نیمرو بولونیا	230 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/nimro%20pesto.png?raw=true
+تست کومو	460 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/roma.png?raw=true
+بشقاب انگلیسی	520 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/boshqab%20engeisi.png?raw=true
+وِرونا	290 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/verona.png?raw=true
 
 سالاد و پیش غذا
 
-سزار پارما	490
-سزار مودِنا	450
-سیب پادوا	440
+سزار پارما	490 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/2-salad/parma.png?raw=true
+سزار مودِنا	450 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/2-salad/modona.png?raw=true
+سیب پادوا	440 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/2-salad/sib%20padova.png?raw=true
 سیب لوکا	350
 
 پنینی
 
-ساساری	540
-تریسته	480
+ساساری	540 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/3-penini/sasari.png?raw=true
+تریسته	480 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/3-penini/teriste.png?raw=true
 
 وعده اصلی
 
-استیک ونیز	890
-استیک رم	620
-استیک باری	750
-برگر جِنوا	700
-برگر پالرمو	720
-دبل برگر ناپِل	890
+استیک ونیز	890 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/venis.png?raw=true
+استیک رم	620 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/bari.png?raw=true
+استیک باری	750 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/bari.png?raw=true
+برگر جِنوا	700 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/jenova.png?raw=true
+برگر پالرمو	720 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/palermo.png
+دبل برگر ناپِل	890 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/bari.png?raw=true
 	
 	
-آلفردو پروجا	600
-فتو راونا	540
+آلفردو پروجا	600 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/alfredo.png?raw=true
+فتو راونا	540 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/fotorabona.png?raw=true
 
 ......................
 
-وعده اصلی
+وعده اصلی پروتئینی
 
-ترنتو	820
+ترنتو	820 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/1-vade%20asli/Trento.PNG?raw=true
 
-میان وعده
+میان وعده پروتئینی
 
-بولتسانو	570
-فلورانس	650
-دولومیتس	730
-کالیاری	520
+بولتسانو	570 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/2-salad/boltzano.PNG?raw=true
+فلورانس	650 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/2-salad/felorans.PNG?raw=true
+دولومیتس	730 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/3-penini/dolomits.PNG?raw=true
+کالیاری	520 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/3-penini/caliari.PNG?raw=true
 برشا	550
 اودینه	500
 
-نوشیدنی
 
-سانرمو	410
-میلان	400
+نوشیدنی پروتئینی
+
+سانرمو	410 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/4-noshidani/sanremo.png?raw=true
+میلان	400 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/4-noshidani/milan.png?raw=true
 سمپدوریا	390
-فیورنتینا	430
-مونتکانتنی	420
+فیورنتینا	430 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/4-noshidani/fioritina.PNG?raw=true
+مونتکانتنی	420 https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/4-noshidani/montekantini.PNG?raw=true
 
 
