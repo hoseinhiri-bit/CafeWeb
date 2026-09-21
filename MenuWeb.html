@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کافه دُم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d0d0f;
+    --bg1:#1a1a1f;
+    --bg2:#0d0d10;
+    --gold:#2bb3a3;
+    --gold-bright:#5eead4;
+    --glass: rgba(255,255,255,0.06);
+    --glass-border: rgba(255,255,255,0.10);
+    --text-dim: rgba(255,255,255,0.55);
+    --text-faint: rgba(255,255,255,0.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html,body{background:var(--bg2);}
+  body{
+    font-family:'Vazirmatn', sans-serif;
+    color:#fff;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    background:
+      radial-gradient(90% 60% at 80% -10%, rgba(45,212,191,0.14) 0%, transparent 60%),
+      radial-gradient(70% 50% at -10% 10%, rgba(45,212,191,0.08) 0%, transparent 55%),
+      linear-gradient(180deg, rgba(26,26,31,0.88) 0%, rgba(13,13,16,0.94) 45%, rgba(13,13,16,0.98) 100%),
+      url('https://github.com/hoseinhiri-bit/CafeWeb/blob/main/WebBack.jpg?raw=true') center/cover fixed no-repeat;
+  }
+
+  .navbar{
+    position:sticky;
+    top:0;
+    z-index:30;
+    padding:14px 20px 12px;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    background: rgba(13,13,16,0.55);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .navbar-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{display:flex;align-items:center;gap:9px;}
+  .brand-mark{
+    width:30px;height:30px;border-radius:9px;
+    background:linear-gradient(155deg, var(--gold-bright), #0f766e);
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+    box-shadow:0 4px 14px rgba(45,212,191,0.35);
+  }
+  .brand-name{font-size:16px;font-weight:700;letter-spacing:0.01em;}
+  .icon-btn{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--glass);border:1px solid var(--glass-border);
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px; cursor:pointer; border:none;
+    color:#fff;
+  }
+  .icon-btn.active{background:var(--gold-bright);color:#1c1a17;}
+
+  .search-row{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .28s cubic-bezier(.4,0,.2,1), margin-top .28s ease;
+  }
+  .search-row.open{max-height:50px; margin-top:12px;}
+  .search-input{
+    width:100%;
+    background:var(--glass);
+    border:1px solid var(--glass-border);
+    border-radius:12px;
+    padding:11px 14px;
+    color:#fff;
+    font-family:inherit;
+    font-size:14px;
+    outline:none;
+  }
+  .search-input::placeholder{color:var(--text-faint);}
+
+  .hero{padding:26px 20px 8px;}
+  .hero-eyebrow{font-size:12.5px;color:var(--gold);font-weight:500;margin-bottom:10px;}
+  .hero-title{font-size:30px;font-weight:800;line-height:1.28;letter-spacing:-0.01em;max-width:300px;}
+  .hero-title span{color:var(--gold-bright);}
+  .hero-sub{margin-top:10px;font-size:14px;font-weight:300;color:var(--text-dim);max-width:290px;line-height:1.85;}
+
+  .featured{
+    margin-top:22px;padding:4px 20px 6px;display:flex;gap:12px;
+    overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;
+  }
+  .featured::-webkit-scrollbar{display:none;}
+  .feat-card{
+    flex:0 0 auto;width:150px;scroll-snap-align:start;border-radius:20px;overflow:hidden;
+    position:relative;background:var(--glass);border:1px solid var(--glass-border);
+    box-shadow:0 12px 24px rgba(0,0,0,0.35);
+  }
+  .feat-img{width:100%;height:110px;object-fit:cover;display:block;background:#1c1a17;}
+  .feat-info{padding:10px 12px 12px;}
+  .feat-name{font-size:13.5px;font-weight:600;}
+  .feat-price{font-size:12px;color:var(--gold-bright);margin-top:4px;font-weight:600;}
+  .feat-badge{
+    position:absolute;top:8px;right:8px;background:rgba(13,13,16,0.65);backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.14);padding:3px 9px;border-radius:100px;
+    font-size:10px;color:var(--gold-bright);font-weight:600;
+  }
+
+  .tabs-wrap{
+    position:sticky;top:60px;z-index:25;padding:16px 20px 12px;
+    background: linear-gradient(180deg, var(--bg2) 60%, rgba(13,13,16,0.0));
+  }
+  .tabs{
+    display:flex;gap:6px;background:var(--glass);border:1px solid var(--glass-border);
+    padding:4px;border-radius:14px;overflow-x:auto;scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{
+    flex:0 0 auto;padding:9px 16px;border-radius:10px;border:none;background:transparent;
+    color:var(--text-dim);font-family:inherit;font-size:13.5px;font-weight:600;
+    white-space:nowrap;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);
+  }
+  .tab.active{
+    background:linear-gradient(155deg, #2c2a26, #1c1a17);color:var(--gold-bright);
+    box-shadow:0 4px 14px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  .menu{padding:6px 20px 50px;}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;margin:26px 2px 14px;}
+  .section-title{font-size:18px;font-weight:700;}
+  .section-count{font-size:12px;color:var(--text-faint);font-weight:300;}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .card{
+    background:var(--glass);border:1px solid var(--glass-border);border-radius:18px;overflow:hidden;
+    box-shadow:0 10px 22px rgba(0,0,0,0.3);
+  }
+  .card-img-wrap{position:relative;width:100%;aspect-ratio:1/0.82;overflow:hidden;background:#1c1a17;}
+  .card-img{width:100%;height:100%;object-fit:cover;display:block;}
+  .card-icon-ph{
+    width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:34px;
+    background:linear-gradient(155deg, rgba(45,212,191,0.18), rgba(45,212,191,0.04));
+  }
+  .card-img-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%);}
+  .card-body{padding:11px 12px 13px;}
+  .card-name{font-size:14px;font-weight:600;line-height:1.4;}
+  .card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;}
+  .card-price{font-size:13px;font-weight:700;color:var(--gold-bright);}
+  .card-price small{font-size:9.5px;color:var(--text-faint);font-weight:400;}
+  .add-btn{
+    width:26px;height:26px;border-radius:50%;
+    background:linear-gradient(155deg, var(--gold-bright), #0f766e);
+    display:flex;align-items:center;justify-content:center;font-size:15px;color:#1c1a17;font-weight:700;
+    box-shadow:0 4px 10px rgba(45,212,191,0.3);
+  }
+
+  .empty-note{
+    padding:16px; text-align:center; font-size:13px; color:var(--text-faint); font-weight:300;
+  }
+  .soon-card{
+    grid-column:1/-1; text-align:center; padding:30px 16px; border-radius:18px;
+    background:var(--glass); border:1px dashed var(--glass-border); color:var(--text-faint); font-size:13px;
+  }
+  .no-results{
+    text-align:center; padding:60px 20px; color:var(--text-faint); font-size:13.5px; font-weight:300;
+  }
+
+  .footer-note{text-align:center;font-size:11.5px;font-weight:300;color:var(--text-faint);padding:8px 20px 30px;}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-row">
+    <div class="brand">
+      <div class="brand-mark">☕</div>
+      <div class="brand-name">کافه دُم</div>
+    </div>
+    <button class="icon-btn" id="searchToggle">🔍</button>
+  </div>
+  <div class="search-row" id="searchRow">
+    <input class="search-input" id="searchInput" type="text" placeholder="دنبال چی می‌گردی؟ مثلاً لاته...">
+  </div>
+</div>
+
+<div class="hero" id="hero">
+  <div class="hero-eyebrow">منوی دیجیتال — ۱۴۰۴</div>
+  <div class="hero-title">فنجونی که <span>لحظه‌تو</span> عوض می‌کنه</div>
+  <p class="hero-sub">از اسپرسوی تلخ گرفته تا وعده‌های اصلی، هر چی که امروز بهش نیاز داری.</p>
+</div>
+
+<div class="featured" id="featured">
+  <div class="feat-card">
+    <div style="position:relative;">
+      <img class="feat-img" src="https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/capochino.png?raw=true" alt="کاپوچینو">
+      <div class="feat-badge">پرفروش</div>
+    </div>
+    <div class="feat-info"><div class="feat-name">کاپوچینو</div><div class="feat-price">۲۹۰ هزار تومان</div></div>
+  </div>
+  <div class="feat-card">
+    <div style="position:relative;">
+      <img class="feat-img" src="https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/afogato.png?raw=true" alt="آفوگاتو">
+      <div class="feat-badge">پیشنهاد ما</div>
+    </div>
+    <div class="feat-info"><div class="feat-name">آفوگاتو</div><div class="feat-price">۲۹۰ هزار تومان</div></div>
+  </div>
+  <div class="feat-card">
+    <div style="position:relative;">
+      <img class="feat-img" src="https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/katania.png?raw=true" alt="کاتانیا">
+      <div class="feat-badge">جدید</div>
+    </div>
+    <div class="feat-info"><div class="feat-name">کاتانیا</div><div class="feat-price">۳۸۰ هزار تومان</div></div>
+  </div>
+  <div class="feat-card">
+    <div style="position:relative;">
+      <img class="feat-img" src="https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/venis.png?raw=true" alt="استیک ونیز">
+      <div class="feat-badge">ویژه</div>
+    </div>
+    <div class="feat-info"><div class="feat-name">استیک ونیز</div><div class="feat-price">۸۹۰ هزار تومان</div></div>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs" id="tabs"></div>
+</div>
+
+<div class="menu" id="menu"></div>
+
+<div class="footer-note">نسخه‌ی تستیه — بعد از تأیید طراحی، جزئیات نهایی رو باهم تکمیل می‌کنیم</div>
+
+<script>
+const iconFor = {
+  "قهوه":"☕","قهوه دمی":"☕","نوشیدنی گرم":"♨️","چای و دمنوش":"🍵","قهوه سرد":"🧊",
+  "نوشیدنی سرد (برپایه شیر)":"🥤","نوشیدنی سرد(گازدار)":"🥤","شیک و اسموتی":"🍹",
+  "نوشیدنی کنار غذا":"🥤","وافل":"🧇","کیک و شیرینی روز":"🍰","صبحانه":"🍳",
+  "سالاد و پیش غذا":"🥗","پنینی":"🥪","وعده اصلی":"🍽️","وعده اصلی پروتئینی":"🍽️",
+  "میان وعده پروتئینی":"🥗","نوشیدنی پروتئینی":"🥤"
+};
+
+function raw(u){
+  if(!u) return null;
+  if(u.includes('github.com') && u.includes('/blob/') && !u.includes('?raw=true')) return u + '?raw=true';
+  return u;
+}
+
+const menuData = [
+["قهوه", [
+  ["اسپرسو",210,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/sperso.png?raw=true"],
+  ["اسپرسو سینگل",160,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/sperso.png?raw=true"],
+  ["آمریکانو",220,null],
+  ["کاپوچینو",290,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/capochino.png?raw=true"],
+  ["لاته بم بن",320,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/bommano.png?raw=true"],
+  ["لاته",300,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/5-qahve/late.png"],
+  ["لاته کارامل",320,null],
+  ["موکا",320,null]
+]],
+["قهوه دمی", [
+  ["قهوه ترک",190,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/6-qahve%20dami/tork.png?raw=true"],
+  ["قهوه یونانی",200,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/6-qahve%20dami/yonani.png?raw=true"]
+]],
+["نوشیدنی گرم", [
+  ["لاته ماچا",340,null],
+  ["لاته اوبه",360,null],
+  ["چای ماسالا",220,null],
+  ["چای کرک",240,null]
+]],
+["چای و دمنوش", [
+  ["چای سیاه",120,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/8-chai%20va%20damnosh/chai%20siah.png?raw=true"],
+  ["قوری چای (۴ نفره)",410,null],
+  ["چای زعفران",170,null],
+  ["چای کاراملی",150,null],
+  ["چای سبز",150,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/8-chai%20va%20damnosh/chai%20sabz.png?raw=true"]
+]],
+["قهوه سرد", [
+  ["اورنج اسپرسو",330,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/orange%20espreso.png?raw=true"],
+  ["آیس آمریکانو",220,null],
+  ["آیس لاته",300,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/ice%20latte%20caramel.png?raw=true"],
+  ["آیس لاته کارامل",320,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/ice%20latte%20caramel.png?raw=true"],
+  ["آیس موکا",320,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/ice%20moka.png?raw=true"],
+  ["آیس لاته تیرامیسو",380,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/latte%20tiramisu.PNG?raw=true"],
+  ["آفوگاتو",290,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/9-qahve%20sard/afogato.png?raw=true"]
+]],
+["نوشیدنی سرد (برپایه شیر)", [
+  ["پیناکولادا",310,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/11-noshidani%20sard%20(shir)/pinacolada.png?raw=true"],
+  ["آیس ماچا",340,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/11-noshidani%20sard%20(shir)/macha.png?raw=true"],
+  ["آیس اوبه",360,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/11-noshidani%20sard%20(shir)/obbe.png?raw=true"],
+  ["آیس ماچا اوبه",380,null],
+  ["آیس اوبه انبه",370,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/11-noshidani%20sard%20(shir)/obbe%20anbe.png?raw=true"]
+]],
+["نوشیدنی سرد(گازدار)", [
+  ["رومنزو",290,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/10-noshidani%20sard%20(qazdar)/romanzo.png?raw=true"],
+  ["لیموناد",240,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/10-noshidani%20sard%20(qazdar)/limonad.png?raw=true"],
+  ["موهیتو",250,null]
+]],
+["شیک و اسموتی", [
+  ["کاتانیا",380,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/katania.png?raw=true"],
+  ["فرارا",360,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/ferara.png?raw=true"],
+  ["ویچنزا",370,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/vichenza.png?raw=true"],
+  ["لیورنو",350,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/liverno.png?raw=true"],
+  ["کالابریا",380,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/kalabria.png?raw=true"],
+  ["مسینا",400,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/messina.png?raw=true"],
+  ["تارانتو",370,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/taranto.png?raw=true"],
+  ["کاپری",420,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/capri.png?raw=true"],
+  ["سورنتو",410,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/12-shake%20va%20smoti/sorento.png?raw=true"]
+]],
+["نوشیدنی کنار غذا", [
+  ["سیراکوز",270,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/13-noshidani%20kenar%20qaza/sirakoz.png?raw=true"],
+  ["فورلی",260,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/13-noshidani%20kenar%20qaza/forli.png?raw=true"]
+]],
+["وافل", [
+  ["وافل وانیلی",360,null],
+  ["وافل شکلاتی",370,null]
+]],
+["کیک و شیرینی روز", []],
+["صبحانه", [
+  ["املت تورین",280,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/omlet%20torin.png?raw=true"],
+  ["نیمرو بولونیا",230,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/nimro%20pesto.png?raw=true"],
+  ["تست کومو",460,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/roma.png?raw=true"],
+  ["بشقاب انگلیسی",520,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/boshqab%20engeisi.png?raw=true"],
+  ["ورونا",290,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/1-sobhane/verona.png?raw=true"]
+]],
+["سالاد و پیش غذا", [
+  ["سزار پارما",490,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/2-salad/parma.png?raw=true"],
+  ["سزار مودنا",450,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/2-salad/modona.png?raw=true"],
+  ["سیب پادوا",440,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/2-salad/sib%20padova.png?raw=true"],
+  ["سیب لوکا",350,null]
+]],
+["پنینی", [
+  ["ساساری",540,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/3-penini/sasari.png?raw=true"],
+  ["تریسته",480,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/3-penini/teriste.png?raw=true"]
+]],
+["وعده اصلی", [
+  ["استیک ونیز",890,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/venis.png?raw=true"],
+  ["استیک رم",620,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/bari.png?raw=true"],
+  ["استیک باری",750,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/bari.png?raw=true"],
+  ["برگر جنوا",700,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/jenova.png?raw=true"],
+  ["برگر پالرمو",720,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/palermo.png"],
+  ["دبل برگر ناپل",890,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/bari.png?raw=true"],
+  ["آلفردو پروجا",600,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/alfredo.png?raw=true"],
+  ["فتو راونا",540,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/adi/4-vade%20asli/fotorabona.png?raw=true"]
+]],
+["وعده اصلی پروتئینی", [
+  ["ترنتو",820,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/1-vade%20asli/Trento.PNG?raw=true"]
+]],
+["میان وعده پروتئینی", [
+  ["بولتسانو",570,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/2-salad/boltzano.PNG?raw=true"],
+  ["فلورانس",650,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/2-salad/felorans.PNG?raw=true"],
+  ["دولومیتس",730,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/3-penini/dolomits.PNG?raw=true"],
+  ["کالیاری",520,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/3-penini/caliari.PNG?raw=true"],
+  ["برشا",550,null],
+  ["اودینه",500,null]
+]],
+["نوشیدنی پروتئینی", [
+  ["سانرمو",410,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/4-noshidani/sanremo.png?raw=true"],
+  ["میلان",400,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/4-noshidani/milan.png?raw=true"],
+  ["سمپدوریا",390,null],
+  ["فیورنتینا",430,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/4-noshidani/fioritina.PNG?raw=true"],
+  ["مونتکانتینی",420,"https://github.com/hoseinhiri-bit/CafeWeb/blob/main/Images/poroteiini/4-noshidani/montekantini.PNG?raw=true"]
+]]
+];
+
+function toFa(n){
+  const map={'0':'۰','1':'۱','2':'۲','3':'۳','4':'۴','5':'۵','6':'۶','7':'۷','8':'۸','9':'۹'};
+  return String(n).replace(/[0-9]/g,d=>map[d]);
+}
+
+const tabsEl = document.getElementById('tabs');
+const menuEl = document.getElementById('menu');
+let activeCat = 'all';
+let query = '';
+
+const allBtn = document.createElement('button');
+allBtn.className = 'tab active';
+allBtn.textContent = 'همه';
+allBtn.dataset.cat = 'all';
+tabsEl.appendChild(allBtn);
+
+menuData.forEach(([cat]) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab';
+  btn.textContent = cat;
+  btn.dataset.cat = cat;
+  tabsEl.appendChild(btn);
+});
+
+tabsEl.addEventListener('click', e=>{
+  const btn = e.target.closest('.tab');
+  if(!btn) return;
+  activeCat = btn.dataset.cat;
+  [...tabsEl.children].forEach(t=>t.classList.toggle('active', t===btn));
+  render();
+});
+
+function cardHTML(name, price, img){
+  const imgTag = img
+    ? `<img class="card-img" loading="lazy" src="${img}" alt="${name}">`
+    : `<div class="card-icon-ph">☕</div>`;
+  return `
+  <div class="card" data-name="${name}">
+    <div class="card-img-wrap">${imgTag}</div>
+    <div class="card-body">
+      <div class="card-name">${name}</div>
+      <div class="card-foot">
+        <div class="card-price">${toFa(price)}<small> هزار</small></div>
+        <div class="add-btn"></div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function render(){
+  menuEl.innerHTML = '';
+  let anyResult = false;
+  const q = query.trim();
+
+  menuData.forEach(([cat, items])=>{
+    if(activeCat !== 'all' && activeCat !== cat) return;
+    const filtered = q ? items.filter(([name])=>name.includes(q)) : items;
+    if(q && filtered.length === 0) return;
+
+    anyResult = true;
+    const block = document.createElement('div');
+    if(items.length === 0){
+      block.innerHTML = `
+        <div class="section-head"><div class="section-title">${cat}</div></div>
+        <div class="soon-card">به‌زودی 🍰</div>`;
+    } else {
+      block.innerHTML = `
+        <div class="section-head">
+          <div class="section-title">${cat}</div>
+          <div class="section-count">${toFa(filtered.length)} آیتم</div>
+        </div>
+        <div class="grid">${filtered.map(([n,p,img])=>cardHTML(n,p,raw(img))).join('')}</div>`;
+    }
+    menuEl.appendChild(block);
+  });
+
+  if(!anyResult){
+    menuEl.innerHTML = `<div class="no-results">چیزی با این اسم پیدا نشد 🤷‍♂️</div>`;
+  }
+}
+
+const searchToggle = document.getElementById('searchToggle');
+const searchRow = document.getElementById('searchRow');
+const searchInput = document.getElementById('searchInput');
+const hero = document.getElementById('hero');
+const featured = document.getElementById('featured');
+
+searchToggle.addEventListener('click', ()=>{
+  const isOpen = searchRow.classList.toggle('open');
+  searchToggle.classList.toggle('active', isOpen);
+  if(isOpen){
+    searchInput.focus();
+  } else {
+    searchInput.value = '';
+    query = '';
+    hero.style.display = '';
+    featured.style.display = '';
+    render();
+  }
+});
+
+searchInput.addEventListener('input', e=>{
+  query = e.target.value;
+  const has = query.trim().length > 0;
+  hero.style.display = has ? 'none' : '';
+  featured.style.display = has ? 'none' : '';
+  render();
+});
+
+render();
+</script>
+
+</body>
+</html>
